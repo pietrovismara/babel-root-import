@@ -1,6 +1,6 @@
 {
   "name": "babel-root-import-fragment",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "description": "Babel Plugin to enable relative root-import",
   "author": "Pietro Vismara <github@pietrovismara.com>",
   "license": "MIT",
