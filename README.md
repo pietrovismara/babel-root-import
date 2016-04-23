@@ -9,15 +9,15 @@ Babel plugin to add the opportunity to use `import` with root based paths.<br>
 ## Example
 ```javascript
 // Usually
-import SomeExample from '../../../some/example.js';
+import SomeExample from '../../../app/some/example.js';
 
 // With Babel-Root-Importer
-import SomeExample from '~/some/example.js';
+import SomeExample from 'app/some/example.js';
 ```
 
 ## Install
 ```
-npm install babel-root-import --save-dev
+npm install babel-root-import-fragmnet --save-dev
 ```
 
 ## Use
@@ -53,40 +53,15 @@ If you don't like the `~` syntax you can just use your own symbole (for example 
 {
   "plugins": [
     ["babel-root-import", {
-      "rootPathPrefix": "@"
+      "rootPathPrefix": "app"
     }]
   ]
 }
 
 // Now you can use the plugin like:
-import foo from '@/my-file';
+import foo from 'app/my-file';
 ```
 
 
 ## Motivate
 If you like this project just give it a star :) I like stars.
-
-## Change Log
-#### 3.2.2 - 2016-02-20
-- Fix custom suffix in path, missing `/` in generated paths
-
-#### 3.2.0 - 2016-02-19
-- Support [Windows-Filesystem](http://superuser.com/questions/176388/why-does-windows-use-backslashes-for-paths-and-unix-forward-slashes/176395#176395)
-- Add possibility to configure a custom rootPath-Symbole (instead of `~` you can use whatever you like)
-
-#### 3.1.0 - 2015-12-01
-- Add possibility config the custom root path
-
-#### 3.0.1 - 2015-11-30
-- Updated plugin to new babel6 API
-- Splitted tests and functions into two scopes with single tests
-- Removed the "extra-root" param for the .babelrc since this is no yet supported in babel6
-
-#### 2.0.1 - 2015-11-15
-Breaking Change to Babel 5
-- Updated to Babel 6
-- Added integration tests
-
-#### 1.0.1 - 2015-08-07
-- Added / updated tests
-- Implemented ESlint
