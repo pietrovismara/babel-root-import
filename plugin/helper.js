@@ -11,7 +11,7 @@ export default function() {
         if (importPath.substring(0, 1) === '/') {
           withoutRootPathPrefix = importPath.substring(1, importPath.length);
         } else {
-          withoutRootPathPrefix = importPath.substring(2, importPath.length);
+          withoutRootPathPrefix = importPath;
         }
         return `${slash(this.root)}${rootPathSuffix ? rootPathSuffix : ''}/${withoutRootPathPrefix}`;
       }
