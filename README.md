@@ -20,32 +20,6 @@ Add a `.babelrc` file and write:
 ```javascript
 {
   "plugins": [
-    "babel-root-import-fragment"
-  ]
-}
-```
-or pass the plugin with the plugins-flag on CLI
-```
-babel-node myfile.js --plugins babel-root-import-fragment
-```
-
-## Extras
-### Custom root-path-suffix
-If you want a custom root because for example all your files are in the src/js folder you can define this in your `.babelrc` file
-```javascript
-{
-  "plugins": [
-    ["babel-root-import-fragment", {
-      "rootPathSuffix": "src/js"
-    }]
-  ]
-}
-```
-
-## You must specify the name of the project root folder
-```javascript
-{
-  "plugins": [
     ["babel-root-import-fragment", {
       "rootPathPrefix": "app"
     }]
@@ -56,6 +30,20 @@ If you want a custom root because for example all your files are in the src/js f
 import foo from 'app/my-file';
 ```
 
+## Extras
+### Custom root-path-suffix
+Do you have a build folder? Add this in your `.babelrc` file
+```javascript
+{
+  "plugins": [
+    ["babel-root-import-fragment", {
+      "rootPathPrefix": "app"
+      "rootPathSuffix": "build"
+    }]
+  ]
+}
+```
+This will redirect the compiled files to the correct folder
 
 ## Motivate
 If you like this project just give it a star :) I like stars.
