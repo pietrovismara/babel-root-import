@@ -17,7 +17,7 @@ export default function() {
         if (rootPathSuffix) {
           let fragments = withoutRootPathPrefix.split('/');
           fragments[0] = rootPathSuffix;
-          withoutRootPathPrefix = fragments.join('/').substring(1);
+          withoutRootPathPrefix = fragments.join('/');
         }
 
         return `${slash(this.root)}${withoutRootPathPrefix}`;
