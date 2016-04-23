@@ -13,7 +13,14 @@ export default function() {
         } else {
           withoutRootPathPrefix = importPath;
         }
-        return `${slash(this.root)}${rootPathSuffix ? rootPathSuffix : ''}/${withoutRootPathPrefix}`;
+
+        if (rootPathSuffix) {
+          let fragments = withoutRootPathPrefix.split('/');
+          fragments[0] = rootPathSuffix;
+          withoutRootPathPrefix = fragments.join('/').substring(1);
+        }
+
+        return `${slash(this.root)}${withoutRootPathPrefix}`;
       }
 
       if (typeof importPath === 'string') {
