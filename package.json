@@ -1,5 +1,5 @@
 {
-  "name": "babel-root-import-fagment",
+  "name": "babel-root-import-fragment",
   "version": "3.2.3",
   "description": "Babel Plugin to enable relative root-import",
   "author": "Pietro Vismara <github@pietrovismara.com>",
