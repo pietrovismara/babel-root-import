@@ -1,10 +1,5 @@
-# Babel Root Import
+# Babel Root Import Fragment
 Babel plugin to add the opportunity to use `import` with root based paths.<br>
-[![Build Status](https://travis-ci.org/michaelzoidl/babel-root-import.svg?branch=master)](https://travis-ci.org/michaelzoidl/babel-root-import)
-[![Codacy Badge](https://img.shields.io/codacy/98f77bcc84964e67a2754e563b962d27.svg)](https://www.codacy.com/app/me_1438/both-io)
-[![Dependency Status](https://david-dm.org/michaelzoidl/babel-root-import.svg)](https://david-dm.org/michaelzoidl/babel-root-import)
-[![devDependency Status](https://david-dm.org/michaelzoidl/babel-root-import/dev-status.svg)](https://david-dm.org/michaelzoidl/babel-root-import#info=devDependencies)
-[![https://github.com/michaelzoidl/babel-root-import](https://img.shields.io/npm/dm/babel-root-import.svg)](https://www.npmjs.com/package/babel-root-import)
 
 ## Example
 ```javascript
@@ -17,7 +12,7 @@ import SomeExample from 'app/some/example.js';
 
 ## Install
 ```
-npm install babel-root-import-fragmnet --save-dev
+npm install babel-root-import-fragment --save-dev
 ```
 
 ## Use
@@ -25,13 +20,13 @@ Add a `.babelrc` file and write:
 ```javascript
 {
   "plugins": [
-    "babel-root-import"
+    "babel-root-import-fragment"
   ]
 }
 ```
 or pass the plugin with the plugins-flag on CLI
 ```
-babel-node myfile.js --plugins babel-root-import
+babel-node myfile.js --plugins babel-root-import-fragment
 ```
 
 ## Extras
@@ -40,19 +35,18 @@ If you want a custom root because for example all your files are in the src/js f
 ```javascript
 {
   "plugins": [
-    ["babel-root-import", {
+    ["babel-root-import-fragment", {
       "rootPathSuffix": "src/js"
     }]
   ]
 }
 ```
 
-### Custom root-path-prefix
-If you don't like the `~` syntax you can just use your own symbole (for example a `@` symbole or `\`)
+## You must specify the name of the project root folder
 ```javascript
 {
   "plugins": [
-    ["babel-root-import", {
+    ["babel-root-import-fragment", {
       "rootPathPrefix": "app"
     }]
   ]
